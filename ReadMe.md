@@ -35,9 +35,9 @@ This is a lab environment, not a production deployment. All the results below ca
 
 The `http-echo` scan contained 1 OS package finding and 71 findings in the Go binary. I haven't broken those down further yet.
 
-![nigix alerts](evidence/nigix-report-before.png)
+![nigix alerts](images/nigix-report-before.png)
 
-![nigix alerts](evidence/http-echo-before.png)
+![nigix alerts](images/http-echo-before.png)
 
 
 ---
@@ -74,7 +74,7 @@ The main preventive controls would be tighter RBAC and avoiding containers runni
 
 **MITRE ATT&CK:** T1059.004 (Unix Shell), T1003.008 (Security Account Manager)
 
-![Falco alerts](evidence/falco-alerts.png)
+![Falco alerts](images/falco-alerts.png)
 
 ---
 
@@ -109,7 +109,7 @@ I also haven't configured Kubernetes audit logging yet, so I can't show a corres
 That's one of the next things I want to add to the lab.
 
 
-![Rbac alerts](evidence/rbac-can-i.png)
+![Rbac alerts](images/rbac-can-i.png)
 
 
 ---
@@ -144,9 +144,9 @@ For a real AWS environment, I would:
 
 **MITRE ATT&CK:** T1078.004 (Valid Accounts: Cloud Accounts), T1562.007 (Disable or Modify Cloud Firewall), T1578.002 (Create Cloud Instance)
 
-![EC2 RunInstances event](evidence/run-instances.png)
+![EC2 RunInstances event](images/run-instances.png)
 
-![Security group change](evidence/authorizesecuritygroups.png)
+![Security group change](images/authorizesecuritygroups.png)
 
 ---
 
@@ -162,7 +162,7 @@ The EC2 instance only had 1 GB of RAM, and K3s eventually ran out of memory.
 
 I added a swap file and the node came back to `Ready`.
 
-![K3s NotReady issue](evidence/not-ready.png)
+![K3s NotReady issue](images/not-ready.png)
 
 ### Trivy ran out of disk space
 
@@ -170,7 +170,7 @@ The original 8 GB disk filled up while working with the container images.
 
 I increased the volume to 20 GB, after which Trivy was able to complete the scans.
 
-![Disk space issue](evidence/no-space.png)
+![Disk space issue](images/no-space.png)
 
 ### SSH key permission error
 
@@ -178,7 +178,7 @@ Windows had extra users listed on the private key file, so SSH refused to use it
 
 I fixed the permissions with `icacls` and was able to connect normally.
 
-![SSH key permission error](evidence/private-key-error.png)
+![SSH key permission error](images/private-key-error.png)
 
 ---
 
