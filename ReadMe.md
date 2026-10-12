@@ -1,4 +1,4 @@
-# Cloud-Native Security & Kubernetes Hardening Lab
+# Cloud-Security-Lab-on-AWS
 
 ## What this is
 
