@@ -193,8 +193,3 @@ A few things stood out while doing this lab.
 - Security controls are easier to understand when I actually test both sides — what should be allowed and what should be blocked.
 
 ---
-
-## What's next
-
-I still want to add Kubernetes audit logging and remediate some of the Trivy findings, then run the scans again to compare the results.
----
